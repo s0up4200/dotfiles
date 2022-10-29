@@ -9,3 +9,6 @@ alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
 alias orphaned="qbittools orphaned"
 alias grab-new="~/scripts/grab-new.sh"
 alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
+
+##ffsend https://github.com/timvisee/ffsend
+upload='ffsend upload --host https://send.domain.com'
