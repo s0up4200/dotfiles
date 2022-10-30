@@ -1,5 +1,5 @@
 #show username with oh-my-zsh
-PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+#PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
 #ip stuff
 alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
@@ -12,4 +12,4 @@ alias grab-new="~/scripts/grab-new.sh"
 alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
 ##ffsend https://github.com/timvisee/ffsend
-upload='ffsend upload --host https://send.r4tio.cat'
+upload='/opt/homebrew/bin/ffsend upload --host https://send.r4tio.cat'
