@@ -12,4 +12,4 @@ alias grab-new="~/scripts/grab-new.sh"
 alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
 ##ffsend https://github.com/timvisee/ffsend
-upload='/opt/homebrew/bin/ffsend upload --host https://send.r4tio.cat'
+alias upload="/opt/homebrew/bin/ffsend upload --host https://send.r4tio.cat"
