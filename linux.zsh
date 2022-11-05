@@ -1,8 +1,8 @@
 # etc for linux
-alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
-alias orphaned="qbittools orphaned"
-alias grab-new="~/scripts/grab-new.sh"
-alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
+#alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
+#alias orphaned="qbittools orphaned"
+#alias grab-new="~/scripts/grab-new.sh"
+#alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
 # show username with oh-my-zsh
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
@@ -15,6 +15,13 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
+
+# Filesystem aliases
+alias l="ls -lah ${colorflag}"
+alias la="ls -AF ${colorflag}"
+alias ll="ls -lFh ${colorflag}"
+alias lld="ls -l | grep ^d"
+alias rmf="rm -rf"
 
 # ffsend
 alias upload="/usr/local/bin/ffsend upload --host https://send.r4tio.cat"
