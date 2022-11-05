@@ -18,3 +18,6 @@ alias tns='tmux new-session -s'
 
 # ffsend
 alias upload="/usr/local/bin/ffsend upload --host https://send.r4tio.cat"
+
+# Clear terminal
+alias clr="clear"
