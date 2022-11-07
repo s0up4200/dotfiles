@@ -1,4 +1,5 @@
 # etc for linux
+
 #alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
 #alias orphaned="qbittools orphaned"
 #alias grab-new="~/scripts/grab-new.sh"
