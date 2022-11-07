@@ -1,3 +1,5 @@
+# some useful aliases
+
 #show username with oh-my-zsh
 PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
