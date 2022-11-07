@@ -1,12 +1,13 @@
 # etc for linux
 
+# brr related
 #alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
 #alias orphaned="qbittools orphaned"
 #alias grab-new="~/scripts/grab-new.sh"
 #alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
 #gpg
-export GPG_TTY=$(tty)
+#export GPG_TTY=$(tty)
 
 # pacman
 alias pacman-upgrade="sudo pacman -Syu"     # Synchronize with repositories and then upgrade packages that are out of date on the local system.
