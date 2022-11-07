@@ -5,8 +5,10 @@
 #alias grab-new="~/scripts/grab-new.sh"
 #alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
+#gpg
+export GPG_TTY=$(tty)
 
-#pacman
+# pacman
 alias pacman-upgrade="sudo pacman -Syu"     # Synchronize with repositories and then upgrade packages that are out of date on the local system.
 alias pacman-install="sudo pacman -S"        # Install specific package(s) from the repositories
 
