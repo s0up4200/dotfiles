@@ -1,17 +1,17 @@
-# etc for linux
+# etc for linux servers
 
 # brr related
-#alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
-#alias orphaned="qbittools orphaned"
-#alias grab-new="~/scripts/grab-new.sh"
-#alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
+alias brr="vnstat -i $(/usr/sbin/route | grep '^default' | grep -o '[^ ]*$') -l"
+alias orphaned="qbittools orphaned"
+alias grab-new="~/scripts/grab-new.sh"
+alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregistered --last-activity"
 
 #gpg
 #export GPG_TTY=$(tty)
 
 # pacman
-alias pacman-upgrade="sudo pacman -Syu"     # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacman-install="sudo pacman -S"        # Install specific package(s) from the repositories
+#alias pacman-upgrade="sudo pacman -Syu"     # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+#alias pacman-install="sudo pacman -S"        # Install specific package(s) from the repositories
 
 # show username with oh-my-zsh
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
