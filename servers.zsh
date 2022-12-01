@@ -33,7 +33,7 @@ alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
 
 # ffsend
-alias upload="/usr/local/bin/ffsend upload --host https://send.r4tio.cat"
+alias upload="/usr/local/bin/ffsend upload --host https://send.r4tio.dev"
 
 # Clear terminal
 alias clr="clear"
