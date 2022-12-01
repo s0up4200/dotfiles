@@ -8,7 +8,7 @@ alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias vpn="curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/country"
 
 ##ffsend https://github.com/timvisee/ffsend
-alias upload="/opt/homebrew/bin/ffsend upload --host https://send.r4tio.cat"
+alias upload="/opt/homebrew/bin/ffsend upload --host https://send.r4tio.dev"
 
 # clear
 alias clr="clear"
