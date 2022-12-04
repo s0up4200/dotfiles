@@ -18,6 +18,7 @@ alias tagjob="qbittools tagging --added-on --not-working --tracker-down --unregi
 
 # ip stuff
 alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias vpn="curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/country"
 
 # tmux aliases
 alias ta='tmux attach'
