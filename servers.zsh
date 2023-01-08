@@ -26,6 +26,11 @@ alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tns='tmux new-session -s'
 
+# docker aliases
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcp='docker compose pull'
+
 # Filesystem aliases
 alias l="ls -lah ${colorflag}"
 alias la="ls -AF ${colorflag}"
