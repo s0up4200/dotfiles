@@ -9,6 +9,10 @@ alias vpn="curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/cou
 
 ##ffsend https://github.com/timvisee/ffsend
 alias upload="/opt/homebrew/bin/ffsend upload --host https://send.r4tio.dev"
+alias download="/opt/homebrew/bin/ffsend download"
 
 # clear
 alias clr="clear"
+
+# Goreleaser
+alias build-all="goreleaser --snapshot --rm-dist"

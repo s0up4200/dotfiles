@@ -34,6 +34,10 @@ alias rmf="rm -rf"
 
 # ffsend
 alias upload="/usr/local/bin/ffsend upload --host https://send.r4tio.dev"
+alias download="/usr/local/bin/ffsend download"
 
 # Clear terminal
 alias clr="clear"
+
+# Goreleaser
+alias build-all="goreleaser --snapshot --rm-dist"
