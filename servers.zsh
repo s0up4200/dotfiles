@@ -44,3 +44,6 @@ alias download="/usr/local/bin/ffsend download"
 
 # Clear terminal
 alias clr="clear"
+
+# Goreleaser
+alias build-all="goreleaser --snapshot --rm-dist"
