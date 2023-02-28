@@ -30,6 +30,7 @@ alias tns='tmux new-session -s'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcp='docker compose pull'
+alias docker-prune='sudo docker system prune -a --volumes --force'
 
 # Filesystem aliases
 alias l="ls -lah ${colorflag}"
