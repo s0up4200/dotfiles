@@ -45,6 +45,7 @@ alias download="/usr/local/bin/ffsend download"
 
 # Clear terminal
 alias clr="clear"
+alias shred_history="shred -u ~/.bash_history ~/.zsh_history && touch ~/.bash_history ~/.zsh_history"
 
 # Goreleaser
 alias build-all="goreleaser --snapshot --rm-dist"
