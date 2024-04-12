@@ -44,5 +44,8 @@ alias download="/usr/local/bin/ffsend download"
 alias clr="clear"
 alias shred_history="shred -u ~/.bash_history ~/.zsh_history && touch ~/.bash_history ~/.zsh_history"
 
+# Trivy
+alias trivy="docker run --runtime=runsc aquasec/trivy image"
+
 # Goreleaser
 alias build-all="goreleaser --snapshot --rm-dist"
