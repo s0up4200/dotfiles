@@ -27,6 +27,7 @@ alias tns='tmux new-session -s'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcp='docker compose pull'
+alias dcr='docker compose restart'
 alias docker-prune='sudo docker system prune -a --volumes --force'
 
 # Filesystem aliases
@@ -39,6 +40,10 @@ alias rmf="rm -rf"
 # ffsend
 alias upload="/usr/local/bin/ffsend upload"
 alias download="/usr/local/bin/ffsend download"
+
+## taildrop
+alias tailcp="tailscale file cp"
+alias tailgrab="sudo tailscale file get"
 
 # Clear terminal
 alias clr="clear"
