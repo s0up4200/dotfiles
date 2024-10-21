@@ -51,6 +51,7 @@ alias shred_history="shred -u ~/.bash_history ~/.zsh_history && touch ~/.bash_hi
 
 # Trivy
 alias trivy="docker run --runtime=runsc aquasec/trivy image"
+alias trivy_all="docker ps --format '{{.Image}}' | xargs -I {} bash -c 'docker run --runtime=runsc aquasec/trivy image \"{}\" > trivy-scan-\$(echo {} | tr \"/\" \"-\").txt'"
 
 # Goreleaser
 alias build-all="goreleaser --snapshot --rm-dist"
