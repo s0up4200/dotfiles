@@ -34,7 +34,12 @@ alias dcd='docker compose down'
 alias dcp='docker compose pull'
 alias dcr='docker compose restart'
 alias docker-prune='sudo docker system prune -a --volumes --force'
-alias logs='docker logs "$@" -f -n 50 | humanlog'
+logs() {
+  local container
+  for container in "$@"; do
+    docker logs "$container" -f -n 50 | humanlog
+  done
+}
 
 # Filesystem aliases
 alias l="ls -lah ${colorflag}"
