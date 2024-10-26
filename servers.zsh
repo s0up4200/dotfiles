@@ -13,6 +13,11 @@
 # show username with oh-my-zsh
 PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
+#humanlog
+#curl -sSL "https://humanlog.io/install.sh" | bash
+export HUMANLOG_INSTALL="/home/yotto/.humanlog"
+export PATH="$HUMANLOG_INSTALL/bin:$PATH"
+
 # ip stuff
 alias ips="/sbin/ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias vpn="curl https://am.i.mullvad.net/ip && curl https://am.i.mullvad.net/country"
@@ -29,6 +34,7 @@ alias dcd='docker compose down'
 alias dcp='docker compose pull'
 alias dcr='docker compose restart'
 alias docker-prune='sudo docker system prune -a --volumes --force'
+alias logs='docker logs "$@" -f -n 50 | humanlog'
 
 # Filesystem aliases
 alias l="ls -lah ${colorflag}"
