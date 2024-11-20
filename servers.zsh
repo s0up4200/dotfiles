@@ -61,3 +61,15 @@ alias trivy_all="docker ps --format '{{.Image}}' | xargs -I {} bash -c 'docker r
 
 # Goreleaser
 alias build-all="goreleaser --snapshot --rm-dist"
+
+# tmux mosh
+
+# cat <<_EOF_ > "/${HOME}/.tmux.conf"
+# new-session
+# set -g history-limit 30000
+# set -g mouse on
+# _EOF_
+
+tmosh() {
+  mosh --no-init $1 -- tmux new-session -ADs main
+}
