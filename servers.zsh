@@ -61,3 +61,22 @@ alias trivy_all="docker ps --format '{{.Image}}' | xargs -I {} bash -c 'docker r
 
 # Goreleaser
 alias build-all="goreleaser --snapshot --rm-dist"
+
+# Remote machine - Override shell window title
+function override_title() {
+  # Save old terminal state
+  local oldstate="$(stty -g)"
+  stty raw -echo
+  printf '\033]0;%s\a' "$(hostname)"
+  # Restore terminal state
+  stty "$oldstate"
+}
+
+# Override terminal title settings
+printf '\e]2;%s\a' "$(hostname)"
+stty -icanon
+
+# Set up hooks to maintain title
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd override_title
+add-zsh-hook preexec override_title
