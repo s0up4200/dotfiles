@@ -37,10 +37,10 @@ alias docker-prune='sudo docker system prune -a --volumes --force'
 alias logs='docker logs -f -n 50'
 
 # Filesystem aliases
-alias l="ls -lah ${colorflag}"
-alias la="ls -AF ${colorflag}"
-alias ll="ls -lFh ${colorflag}"
-alias lld="ls -l | grep ^d"
+alias l="eza --long --all --header --git --icons"
+alias la="eza --all --icons"
+alias ll="eza --long --header --git --icons"
+alias lld="eza --long --icons --only-dirs"
 alias rmf="rm -rf"
 
 # ffsend
