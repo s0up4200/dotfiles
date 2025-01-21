@@ -1,0 +1,23 @@
+[filter "lfs"]
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+        clean = git-lfs clean -- %f
+[user]
+        name = s0up4200
+        email = s0up4200@pm.me
+        signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDshzdsxGt+e0awtpYoAfEQTbnqeWMCk/+TqQw6lKHjb
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+        gpgsign = true
+[pull]
+        rebase = false
+[fetch]
+        prune = true
+[diff]
+        colorMoved = zebra
+[core]
+        editor = nano
