@@ -5,6 +5,9 @@ echo "Starting installation..."
 # ensure we're in the right directory
 cd "$(dirname "$0")"
 
+# make all installation scripts executable
+chmod +x install/*.sh
+
 # detect operating system
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Running macOS installation..."
