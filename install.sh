@@ -7,8 +7,7 @@ cd "$(dirname "$0")"
 
 # detect operating system
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo "Running on macOS"
-    # full installation for macOS
+    echo "Running macOS installation..."
     ./install/packages.sh
     ./install/shell.sh
     ./install/vim.sh
@@ -16,9 +15,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ./install/ghostty.sh
     ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 else
-    echo "Running on Linux"
-    # skip macOS-specific installations
-    ./install/packages.sh --skip-macos
+    echo "Running Linux installation..."
+    ./install/linux-packages.sh
     ./install/shell.sh
     ./install/vim.sh
     ./install/bat.sh

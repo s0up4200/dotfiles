@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# only run on macOS
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "Skipping Ghostty installation (macOS only)"
+    exit 0
+fi
+
 # install homebrew if not already installed
 if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew..."
@@ -36,4 +42,4 @@ shell-integration = "detect"
 theme = catppuccin-macchiato
 EOL
 
-echo "Ghostty installation complete!"
+echo "Ghostty configuration complete!"

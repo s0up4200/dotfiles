@@ -34,6 +34,7 @@ brew install gh
 brew install pnpm
 brew install vite
 brew install aichat
+brew install wget
 
 # install cask applications only if on macOS
 if [ $SKIP_MACOS -eq 0 ]; then
@@ -45,14 +46,7 @@ if [ $SKIP_MACOS -eq 0 ]; then
     brew install --cask qbittorrent
     brew install --cask spotify
     brew install --cask transmission
+    brew install --cask raycast
 fi
 
-# set up ghostty config
-GHOSTTY_CONFIG_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
-mkdir -p "$GHOSTTY_CONFIG_DIR"
-cp config/ghostty/config "$GHOSTTY_CONFIG_DIR/config"
-
-# run bat configuration
-./install/bat.sh
-
-echo "Package installation complete!" 
+echo "Package installation complete!"
