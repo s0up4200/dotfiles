@@ -13,7 +13,6 @@ mkdir -p ~/dotfiles/zsh
 
 # copy zsh configurations
 cp zsh/aliases.zsh ~/dotfiles/zsh/
-cp zsh/p10k.zsh ~/dotfiles/zsh/
 
 # detect operating system
 if [[ "$OSTYPE" == "darwin"* ]]; then

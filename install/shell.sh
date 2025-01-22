@@ -18,15 +18,7 @@ mkdir -p ~/.oh-my-zsh/custom
 # link our custom zsh configuration
 ln -sf ~/dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 
-# set up p10k configuration using the existing file
-ln -sf ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
-
 # update .zshrc to use powerlevel10k
 sed -i.bak 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
-# add p10k configuration source to .zshrc if not already present
-if ! grep -q "source ~/.p10k.zsh" ~/.zshrc; then
-    echo "[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh" >> ~/.zshrc
-fi
-
-echo "Shell configuration complete!" 
+echo "Shell configuration complete! Run 'source ~/.zshrc' to configure p10k." 
