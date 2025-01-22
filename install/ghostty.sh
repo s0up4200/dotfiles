@@ -2,21 +2,10 @@
 
 # only run on macOS
 if [[ "$OSTYPE" != "darwin"* ]]; then
-    echo "Skipping Ghostty installation (macOS only)"
+    echo "Skipping Ghostty configuration (macOS only)"
     exit 0
 fi
 
-# install homebrew if not already installed
-if ! command -v brew &> /dev/null; then
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    echo "Homebrew already installed"
-fi
-
-# install ghostty
-echo "Installing Ghostty..."
-brew install --cask ghostty
 
 # set up ghostty config
 GHOSTTY_CONFIG_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"

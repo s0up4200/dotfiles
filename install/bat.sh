@@ -30,8 +30,16 @@ download_file "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mo
 mkdir -p "$BAT_CONFIG_DIR"
 echo "--theme=\"Catppuccin Macchiato\"" > "$BAT_CONFIG_DIR/config"
 
-# rebuild bat cache
+# rebuild bat cache using full path
 echo "Rebuilding bat cache..."
-bat cache --build
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        /opt/homebrew/bin/bat cache --build
+    else
+        /usr/local/bin/bat cache --build
+    fi
+else
+    bat cache --build  # for Linux
+fi
 
 echo "Bat configuration complete!" 
