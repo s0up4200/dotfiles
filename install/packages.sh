@@ -34,6 +34,20 @@ else
     echo "Homebrew already installed"
 fi
 
+# install gdu disk usage analyzer
+echo "Installing gdu..."
+if [[ "$(uname -m)" == "arm64" ]]; then
+    # M1/M2 Mac
+    curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_darwin_arm64.tgz | tar xz
+    sudo chmod +x gdu_darwin_arm64
+    sudo mv gdu_darwin_arm64 /usr/local/bin/gdu
+else
+    # Intel Mac
+    curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_darwin_amd64.tgz | tar xz
+    sudo chmod +x gdu_darwin_amd64
+    sudo mv gdu_darwin_amd64 /usr/local/bin/gdu
+fi
+
 # install basic utilities
 echo "Installing basic utilities..."
 brew install wget
@@ -45,7 +59,6 @@ brew install tmux
 echo "Installing modern CLI tools..."
 brew install bat
 brew install eza
-brew install gdu
 
 # install development tools
 echo "Installing development tools..."
@@ -54,6 +67,7 @@ brew install pnpm
 brew install vite
 brew install go
 brew install aichat
+brew install --cask cursor
 
 # install GUI applications
 echo "Installing productivity applications..."
@@ -61,9 +75,16 @@ brew install --cask raycast    # spotlight replacement
 brew install --cask numi       # calculator
 brew install --cask ghostty    # terminal
 brew install --cask 1password  # password manager
+brew install --cask cleanshot  # screenshot tool
+brew install --cask pixelsnap  # screenshot tool
 
 echo "Installing browsers..."
 brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask brave-browser
+
+echo "Installing VPN..."
+brew install --cask tailscale
 
 echo "Installing media applications..."
 brew install --cask spotify
@@ -71,6 +92,7 @@ brew install --cask spotify
 echo "Installing download tools..."
 brew install --cask qbittorrent
 brew install --cask transmission
+brew install --cask transmit  # file transfer tool
 
 echo "Installing system utilities..."
 brew install --cask jordanbaird-ice  # window management
