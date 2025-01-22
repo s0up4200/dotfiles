@@ -8,6 +8,13 @@ cd "$(dirname "$0")"
 # make all installation scripts executable
 chmod +x install/*.sh
 
+# create dotfiles structure
+mkdir -p ~/dotfiles/zsh
+
+# copy zsh configurations
+cp zsh/aliases.zsh ~/dotfiles/zsh/
+cp zsh/p10k.zsh ~/dotfiles/zsh/
+
 # detect operating system
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Running macOS installation..."
@@ -16,7 +23,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ./install/vim.sh
     ./install/bat.sh
     ./install/ghostty.sh
-    ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+    ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 else
     echo "Running Linux installation..."
     ./install/linux-packages.sh
