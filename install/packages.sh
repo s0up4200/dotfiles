@@ -16,11 +16,19 @@ if ! command -v brew &> /dev/null; then
     if [[ "$(uname -m)" == "arm64" ]]; then
         # M1/M2 Mac
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+        source ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else
         # Intel Mac
         echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+        source ~/.zprofile
         eval "$(/usr/local/bin/brew shellenv)"
+    fi
+    
+    # Verify Homebrew is now in PATH
+    if ! command -v brew &> /dev/null; then
+        echo "Error: Homebrew installation failed or PATH not set correctly"
+        exit 1
     fi
 else
     echo "Homebrew already installed"
