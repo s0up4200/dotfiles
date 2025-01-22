@@ -22,6 +22,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ./install/vim.sh
     ./install/bat.sh
     ./install/ghostty.sh
+    ./install/repos.sh
     ./install/go.sh
     ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 else
@@ -30,6 +31,7 @@ else
     ./install/shell.sh
     ./install/vim.sh
     ./install/bat.sh
+    ./install/repos.sh
     ./install/go.sh
     
     # use simplified gitconfig for Linux

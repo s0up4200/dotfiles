@@ -25,6 +25,7 @@ brew install tmux
 echo "Installing modern CLI tools..."
 brew install bat
 brew install eza
+brew install gdu
 
 # install development tools
 echo "Installing development tools..."
