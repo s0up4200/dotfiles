@@ -10,6 +10,18 @@ fi
 if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    # Set up Homebrew in the PATH
+    echo "Setting up Homebrew in PATH..."
+    if [[ "$(uname -m)" == "arm64" ]]; then
+        # M1/M2 Mac
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+        # Intel Mac
+        echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
 else
     echo "Homebrew already installed"
 fi
