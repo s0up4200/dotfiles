@@ -1,3 +1,5 @@
+# rename from servers.zsh to aliases.zsh 
+
 # etc for linux servers
 
 # brr related
@@ -32,7 +34,7 @@ alias tns='tmux new-session -s'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcp='docker compose pull'
-alias dcr='docker compose restart'
+alias dcr='docker compose down && docker compose up -d'
 alias docker-prune='sudo docker system prune -a --volumes --force'
 alias logs='docker logs -f -n 50'
 
@@ -63,16 +65,10 @@ alias trivy_all="docker ps --format '{{.Image}}' | xargs -I {} bash -c 'docker r
 alias build-all="goreleaser --snapshot --rm-dist"
 
 # tmux mosh
-
-# cat <<_EOF_ > "/${HOME}/.tmux.conf"
-# new-session
-# set -g history-limit 30000
-# set -g mouse on
-# _EOF_
-
 tmosh() {
   mosh --no-init $1 -- tmux new-session -ADs main
 }
+
 # Remote machine - Override shell window title
 function override_title() {
   # Save old terminal state
@@ -90,4 +86,4 @@ stty -icanon
 # Set up hooks to maintain title
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd override_title
-add-zsh-hook preexec override_title
+add-zsh-hook preexec override_title 
