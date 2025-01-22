@@ -3,7 +3,7 @@
 echo "Setting up bat with Catppuccin theme..."
 
 # create bat config directory and themes subdirectory
-BAT_CONFIG_DIR="$(bat --config-dir)"
+BAT_CONFIG_DIR="$HOME/.config/bat"
 mkdir -p "$BAT_CONFIG_DIR/themes"
 
 # download catppuccin themes
@@ -14,9 +14,8 @@ wget -P "$BAT_CONFIG_DIR/themes" https://github.com/catppuccin/bat/raw/main/them
 wget -P "$BAT_CONFIG_DIR/themes" https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 
 # create/update bat config file
-BAT_CONFIG_FILE="$(bat --config-file)"
-mkdir -p "$(dirname "$BAT_CONFIG_FILE")"
-echo "--theme=\"Catppuccin Macchiato\"" > "$BAT_CONFIG_FILE"
+mkdir -p "$BAT_CONFIG_DIR"
+echo "--theme=\"Catppuccin Macchiato\"" > "$BAT_CONFIG_DIR/config"
 
 # rebuild bat cache
 echo "Rebuilding bat cache..."
