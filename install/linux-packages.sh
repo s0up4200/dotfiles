@@ -6,6 +6,23 @@ echo "Installing Linux packages..."
 mkdir -p ~/bin
 PATH="$HOME/bin:$PATH"
 
+# detect architecture
+ARCH=$(uname -m)
+case $ARCH in
+    x86_64)
+        ARCH_DEB="amd64"
+        ARCH_NAME="x86_64"
+        ;;
+    aarch64|arm64)
+        ARCH_DEB="arm64"
+        ARCH_NAME="aarch64"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
 # install basic utilities
 echo "Installing basic utilities..."
 sudo apt-get update
@@ -43,7 +60,7 @@ fi
 if ! command -v bat &> /dev/null; then
     echo "Installing bat..."
     BAT_VERSION=$(curl -s "https://api.github.com/repos/sharkdp/bat/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-    curl -Lo bat.deb "https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat_${BAT_VERSION}_amd64.deb"
+    curl -Lo bat.deb "https://github.com/sharkdp/bat/releases/download/v${BAT_VERSION}/bat_${BAT_VERSION}_${ARCH_DEB}.deb"
     sudo dpkg -i bat.deb
     rm bat.deb
 fi
@@ -52,9 +69,10 @@ fi
 if ! command -v eza &> /dev/null; then
     echo "Installing eza..."
     EZA_VERSION=$(curl -s "https://api.github.com/repos/eza-community/eza/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-    curl -Lo eza.deb "https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_${EZA_VERSION}_amd64.deb"
-    sudo dpkg -i eza.deb
-    rm eza.deb
+    curl -Lo eza.tar.gz "https://github.com/eza-community/eza/releases/download/v${EZA_VERSION}/eza_${ARCH_NAME}-unknown-linux-gnu.tar.gz"
+    tar xf eza.tar.gz
+    mv eza ~/bin/
+    rm eza.tar.gz
 fi
 
 # install tmux if not present
@@ -75,7 +93,7 @@ fi
 if ! command -v aichat &> /dev/null; then
     echo "Installing aichat..."
     AICHAT_VERSION=$(curl -s "https://api.github.com/repos/sigoden/aichat/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-    curl -Lo aichat.tar.gz "https://github.com/sigoden/aichat/releases/download/v${AICHAT_VERSION}/aichat-${AICHAT_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+    curl -Lo aichat.tar.gz "https://github.com/sigoden/aichat/releases/download/v${AICHAT_VERSION}/aichat-v${AICHAT_VERSION}-${ARCH_NAME}-unknown-linux-musl.tar.gz"
     tar xf aichat.tar.gz
     mv aichat ~/bin/
     rm aichat.tar.gz
