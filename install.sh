@@ -22,6 +22,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ./install/vim.sh
     ./install/bat.sh
     ./install/ghostty.sh
+    ./install/go.sh
     ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 else
     echo "Running Linux installation..."
@@ -29,6 +30,7 @@ else
     ./install/shell.sh
     ./install/vim.sh
     ./install/bat.sh
+    ./install/go.sh
     
     # use simplified gitconfig for Linux
     cat > ~/.gitconfig << EOL

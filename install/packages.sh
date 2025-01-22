@@ -1,52 +1,61 @@
 #!/bin/bash
 
-# check if we're skipping macOS-specific installations
-SKIP_MACOS=0
-if [ "$1" = "--skip-macos" ]; then
-    SKIP_MACOS=1
+# Only proceed if we're on macOS
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    echo "This script is for macOS only."
+    exit 0
 fi
 
 # install homebrew if not already installed
 if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    
-    # Add Homebrew to PATH for Linux
-    if [[ "$OSTYPE" != "darwin"* ]]; then
-        if [[ -d "/home/linuxbrew/.linuxbrew" ]]; then
-            # Linux Homebrew path
-            (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> ~/.zshrc
-            eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-        fi
-    fi
 else
     echo "Homebrew already installed"
 fi
 
-# install command line tools
-echo "Installing CLI tools..."
-brew install node@22
-brew install tmux
-brew install bat
-brew install eza
+# install basic utilities
+echo "Installing basic utilities..."
+brew install wget
 brew install git
 brew install gh
+brew install tmux
+
+# install modern CLI replacements
+echo "Installing modern CLI tools..."
+brew install bat
+brew install eza
+
+# install development tools
+echo "Installing development tools..."
+brew install node@22
 brew install pnpm
 brew install vite
+brew install go
 brew install aichat
-brew install wget
 
-# install cask applications only if on macOS
-if [ $SKIP_MACOS -eq 0 ]; then
-    echo "Installing applications..."
-    brew install --cask ghostty
-    brew install --cask firefox
-    brew install --cask jordanbaird-ice
-    brew install --cask numi
-    brew install --cask qbittorrent
-    brew install --cask spotify
-    brew install --cask transmission
-    brew install --cask raycast
-fi
+# install GUI applications
+echo "Installing productivity applications..."
+brew install --cask raycast    # spotlight replacement
+brew install --cask numi       # calculator
+brew install --cask ghostty    # terminal
+brew install --cask 1password  # password manager
+
+echo "Installing browsers..."
+brew install --cask firefox
+
+echo "Installing media applications..."
+brew install --cask spotify
+
+echo "Installing download tools..."
+brew install --cask qbittorrent
+brew install --cask transmission
+
+echo "Installing system utilities..."
+brew install --cask jordanbaird-ice  # window management
+
+# cleanup
+echo "Cleaning up..."
+brew cleanup
 
 echo "Package installation complete!"
