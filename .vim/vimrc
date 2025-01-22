@@ -1,30 +1,10 @@
-" enable syntax highlighting
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+call plug#end()
+
 syntax enable
-
-" enable true colors
 set termguicolors
-
-" set the color scheme
 colorscheme catppuccin_macchiato
-
-" display settings
-set number          " show line numbers
-set cursorline      " highlight current line
-set ruler           " show cursor position
-set showmatch       " show matching brackets
-
-" indentation settings
-set expandtab       " use spaces instead of tabs
-set tabstop=4       " tab width
-set softtabstop=4   " tab width
-set shiftwidth=4    " tab width
-set autoindent      " auto indent
-set smartindent     " smart indent
-
-" search settings
-set incsearch       " incremental search
-set hlsearch        " highlight search results
-
-" general settings
-set encoding=utf-8
-set wildmenu        " command-line completion 
