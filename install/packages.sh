@@ -52,6 +52,7 @@ fi
 echo "Installing basic utilities..."
 brew install wget
 brew install git
+brew install lazygit
 brew install gh
 brew install tmux
 
