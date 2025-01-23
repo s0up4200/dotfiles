@@ -92,5 +92,13 @@ add-zsh-hook precmd override_title
 add-zsh-hook preexec override_title 
 
 # bat
-export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 alias cat="bat"
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+# wrapper around bat command to automatically pipe json files through jq
+bat() {
+    if [[ "$@" =~ \.json$ ]]; then
+        command bat "$@" | jq
+    else
+        command bat "$@"
+    fi
+}
