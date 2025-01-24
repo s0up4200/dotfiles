@@ -102,3 +102,11 @@ bat() {
         command bat "$@"
     fi
 }
+
+alias logsmoe='function _logsmoe() { 
+    if [[ "$1" == "-" ]]; then
+        curl https://logs.pizzly-dinosaur.ts.net --data-binary @-
+    else
+        curl https://logs.pizzly-dinosaur.ts.net --data-binary "@${1:--}"
+    fi
+}; _logsmoe'
