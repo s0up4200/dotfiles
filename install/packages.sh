@@ -80,6 +80,7 @@ brew install --cask ghostty    # terminal
 brew install --cask 1password  # password manager
 brew install --cask cleanshot  # screenshot tool
 brew install --cask pixelsnap  # screenshot tool
+brew install --cask daisydisk  # disk usage analyzer
 
 echo "Installing browsers..."
 brew install --cask firefox
