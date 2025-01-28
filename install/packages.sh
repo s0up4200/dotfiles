@@ -55,11 +55,13 @@ brew install git
 brew install lazygit
 brew install gh
 brew install tmux
+brew install mas
 
 # install modern CLI replacements
 echo "Installing modern CLI tools..."
 brew install bat
 brew install eza
+brew install jq
 
 # install development tools
 echo "Installing development tools..."

@@ -18,6 +18,16 @@ cp zsh/aliases.zsh ~/dotfiles/zsh/
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo "Running macOS installation..."
     ./install/packages.sh
+    echo "Would you like to install Mac App Store applications? (y/n)"
+    read -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        echo "Please make sure you're logged in to the Mac App Store first."
+        echo "Press any key to continue when ready..."
+        read -n 1 -r
+        ./install/mas_apps.sh
+    fi
     ./install/shell.sh
     ./install/vim.sh
     ./install/bat.sh

@@ -21,3 +21,7 @@
         colorMoved = zebra
 [core]
         editor = nano
+[receive]
+	advertisePushOptions = true
+[safe]
+	directory = *
