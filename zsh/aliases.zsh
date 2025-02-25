@@ -110,3 +110,10 @@ alias logsmoe='function _logsmoe() {
         curl https://logs.pizzly-dinosaur.ts.net --data-binary "@${1:--}"
     fi
 }; _logsmoe'
+
+# convert all flac files to 16bit
+flac24to16() {
+    for file in *.flac; do
+        ffmpeg -i "$file" -sample_fmt s16 "${file%.flac}_16bit.flac"
+    done
+}
