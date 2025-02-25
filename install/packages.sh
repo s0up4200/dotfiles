@@ -56,6 +56,7 @@ brew install lazygit
 brew install gh
 brew install tmux
 brew install mas
+brew install mosh
 
 # install modern CLI replacements
 echo "Installing modern CLI tools..."
@@ -71,6 +72,9 @@ brew install vite
 brew install go
 brew install aichat
 brew install --cask cursor
+brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask font-hack-nerd-font
+brew install starship
 
 # install GUI applications
 echo "Installing productivity applications..."
