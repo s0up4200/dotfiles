@@ -4,8 +4,10 @@
 cd ~/dotfiles
 git pull
 
-# relink aliases file
-ln -sf ~/dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+# check if aliases are already in .zshrc and add if missing
+if ! grep -q "source ~/dotfiles/zsh/aliases.zsh" ~/.zshrc; then
+    echo "source ~/dotfiles/zsh/aliases.zsh" >> ~/.zshrc
+fi
 
 # reload zsh configuration by executing the source command in zsh
 zsh -c 'source ~/.zshrc'
