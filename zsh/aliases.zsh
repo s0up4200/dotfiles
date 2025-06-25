@@ -117,3 +117,6 @@ flac24to16() {
         ffmpeg -i "$file" -sample_fmt s16 "${file%.flac}_16bit.flac"
     done
 }
+
+# other
+alias hardlink="find /mnt/storage/media -path /mnt/storage/media/audiobooks -prune -o -type f -links 1 -printf '%h\n' | sort | uniq"
