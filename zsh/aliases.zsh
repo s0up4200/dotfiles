@@ -38,7 +38,7 @@ alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 alias dcp='docker compose pull'
 alias dcr='docker compose down && docker compose up -d'
-alias docker-prune='sudo docker system prune -a --volumes --force'
+alias docker-prune='docker system prune -a --volumes --force'
 alias logs='docker logs -f -n 50'
 
 # Filesystem aliases
