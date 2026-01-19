@@ -16,7 +16,7 @@
 alias update-dots='~/dotfiles/update.sh'
 
 # show username with oh-my-zsh
-PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%~ ${PROMPT}"
 
 #humanlog
 #curl -sSL "https://humanlog.io/install.sh" | bash
@@ -92,7 +92,7 @@ add-zsh-hook precmd override_title
 add-zsh-hook preexec override_title 
 
 # bat
-alias cat="bat"
+#alias cat="bat"
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 # wrapper around bat command to automatically pipe json files through jq
 bat() {
@@ -120,3 +120,6 @@ flac24to16() {
 
 # other
 alias hardlink="find /mnt/storage/media -path /mnt/storage/media/audiobooks -prune -o -type f -links 1 -printf '%h\n' | sort | uniq"
+
+# get-soup-done installer
+alias gsd-install='git clone git@github.com:s0up4200/get-soup-done.git /tmp/gsd && node /tmp/gsd/bin/install.js && rm -rf /tmp/gsd'
