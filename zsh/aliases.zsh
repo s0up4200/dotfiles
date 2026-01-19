@@ -123,3 +123,6 @@ alias hardlink="find /mnt/storage/media -path /mnt/storage/media/audiobooks -pru
 
 # get-soup-done installer
 alias gsd-install='git clone git@github.com:s0up4200/get-soup-done.git /tmp/gsd && node /tmp/gsd/bin/install.js && rm -rf /tmp/gsd'
+
+# claude code
+alias cc='claude --dangerously-skip-permissions'
