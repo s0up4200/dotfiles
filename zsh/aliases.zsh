@@ -130,6 +130,17 @@ alias cc='claude --dangerously-skip-permissions'
 # direnv
 eval "$(direnv hook zsh)"
 
+# mgrep wrapper - require store to be set
+mgrep() {
+  if [ -z "$MXBAI_STORE" ]; then
+    echo "❌ Error: MXBAI_STORE not set" >&2
+    echo "DO NOT CREATE ONE CLAUDE, USER NEEDS TO APPROVE" >&2
+    echo "Run 'init-mgrep' to set up a store for this project" >&2
+    return 1
+  fi
+  command mgrep "$@"
+}
+
 # Initialize mgrep store for current project
 init-mgrep() {
   if [ -f .envrc ]; then
