@@ -126,3 +126,6 @@ alias gsd-install='git clone git@github.com:s0up4200/get-soup-done.git /tmp/gsd 
 
 # claude code
 alias cc='claude --dangerously-skip-permissions'
+
+# direnv
+eval "$(direnv hook zsh)"
