@@ -129,3 +129,22 @@ alias cc='claude --dangerously-skip-permissions'
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# Initialize mgrep store for current project
+init-mgrep() {
+  if [ -f .envrc ]; then
+    echo ".envrc already exists"
+    return 1
+  fi
+
+  local git_root=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -z "$git_root" ]; then
+    echo "Not in a git repository"
+    return 1
+  fi
+
+  local store_name=$(basename "$git_root")
+  echo "export MXBAI_STORE=$store_name" > .envrc
+  direnv allow
+  echo "Created .envrc with store: $store_name"
+}
