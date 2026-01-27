@@ -159,3 +159,5 @@ init-mgrep() {
   direnv allow
   echo "Created .envrc with store: $store_name"
 }
+
+alias lg="lazygit"
