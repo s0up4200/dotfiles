@@ -161,3 +161,4 @@ init-mgrep() {
 }
 
 alias lg="lazygit"
+alias cx='codex --dangerously-bypass-approvals-and-sandbox'
